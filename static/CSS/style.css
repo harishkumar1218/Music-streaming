@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: url('Images/bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    /*filter: blur(5px);
+    -webkit-filter: blur(5px);*/
+    
+}
+
+.container .navigation{
+    padding: 25px;
+    border: 1px solid #fff;
+    margin-bottom: 30px;
+}
+
+.container .navigation li{
+    font-size: 25px;
+    color: white;
+    /*font-weight: bold;*/
+    font-family: brush Script;
+    padding: 30px;
+    display: inline;
+}
+
+.container .navigation a{
+    text-decoration: none;
+    text-align: right;
+}
+
+.btn{
+    color: white;
+    font-weight: bold;
+    font-family: brush Script;
+    padding: 15px;
+    border-radius: 20%;
+    background-color: rgb(228, 117, 221);
+}
+
+.container .recommended{
+    color: white;
+
+}
+
+.container .recommended li{
+    display: inline;
+}
+
+.music{
+    width: 75px;
+    height: 50px;
+    
+}
+
+/*
+.container .matter{
+    border: 2px solid black;
+    padding: 100px;
+    margin: 100px;
+    background-color: rgba(255, 255, 255, 0.02);
+    border-radius: 35px;
+    animation: animate 2s linear infinite;
+
+}   
+
+@keyframes animate{
+    0%, 100%{
+        transform: translateY(50px);
+    }
+    50%{
+        transform: translateY(100px);
+    }
+}
+
+.container .matter img{
+    max-width: 100%;
+    height: auto;   
+}
