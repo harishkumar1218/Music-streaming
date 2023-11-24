@@ -1,0 +1,194 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="recommendation">
+        {%for song in recommended_song_ids%}
+            <form method="post" id="{{recommended_song_ids.index(song)}}">
+                <input type="submit" id="{{recommended_song_ids.index(song)}}" value="{{recommended_song_ids.index(song)}}"></input>
+            </form>
+            <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous"></script>
+        
+        <script type="text/javascript">
+        $(document).on('submit','#{{recommended_song_ids.index(song)}}',function(e)
+                     {
+        //console.log($("#todo"),val());
+        e.preventDefault();
+        var $index = e.target.id;
+        $.ajax({
+          type:'POST',
+          url:'/playsong',
+          data:{
+            todo: $index
+          },
+          success:function()
+          {
+            //alert('saved');
+          }
+        })
+        });
+        </script>
+    </div> 
+    {%endfor%}
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/musicc.css')}}">
+    <title>Document</title>
+    <style>
+        @media screen and (max-width:700px) {
+            .profil{
+                display: none;
+            }
+            .leftimg{
+                display: block; 
+            }
+           .topbar{
+               
+                position: absolute;
+                height: 479px;
+                width: 40px;
+                left: 0px;
+                border-radius: 0px 12px 12px 0px;
+                border: 2px solid rgb(255, 42, 223);
+                
+           }
+           .musicbar, .videobar, .shopbar, .moneybar, .chatbar{
+            border-radius: 0px 7px 0px 0px;
+            width: 35px;
+            height: 35px;
+            margin-top: 5%;
+            margin-left: 1%;
+           }
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <div class="musicbar"><img src="static\images\musiciconsvg.png" class="musicicon"></div>
+        <div class="videobar"><img src="static\images\tvsvg.png" class="videoicon"></div>
+        <div class="shopbar"><img src="static\images\shopsvg.png" class="shopicon"></div>
+        <div class="moneybar"><img src="static\images\moneysvg.png" class="moneyicon"></div>
+        <div class="chatbar"><img src="static\images\chatsvg.png" class="chaticon"></div>
+    </div>
+    <div class="profil">
+        <div class="elipesprofil"></div>
+    </div>
+    <div class="star1"></div>
+    <div class="estar1"></div>
+    <div class="star2"></div>
+    <div class="estar2"></div>
+    <div class="estar3"></div>
+    <div class="star3"></div>
+    <div class="estar4"></div>
+    <div class="star4"></div>
+    <div class="estar5"></div>
+    <div class="star5"></div>
+    <div class="estar6"></div>
+    <div class="star6"></div>
+    <div class="estar7"></div>
+    <div class="star7"></div>
+    <div class="estar8"></div>
+    <div class="star8"></div>
+    <div class="estar9"></div>
+    <div class="star9"></div>
+    <div class="estar10"></div>
+    <div class="star10"></div>
+    <div class="estar11"></div>
+    <div class="star11"></div>
+    <div class="estar12"></div>
+    <div class="star12"></div>
+    <div class="estar13"></div>
+    <div class="star13"></div>
+    <div class="estar14"></div>
+    <div class="star14"></div>
+    <div class="scrollbody" style="overflow-x: hidden;">
+        
+        <div class="cards">
+
+            {% for d in data %}
+            <div class="slidebar1" >
+              <img id="homegram" src="static\images\homgramsvg.png">
+              <p id="slidebartext">{{d}}</p>
+          </div>
+            {%for i in data[d]%}
+            <div class="card1" id="data_{{d}}" data-tilt data-tilt-scale="1.1" revarse="true">
+                <div class="namebar" >{{i}}</div>
+                <div class="dpbox">
+                    <!-- <img src="static/Images/musicsymbol.png"   class="profilelipes" > -->
+                    <!-- <audio id="so" src="{{d[3]}}" type="audio/mp3" > </audio> -->
+                    
+                    <form method="post" id="{{i}}">
+                      <button type="submit" value="Submit" style="background-color: transparent;"><img src="static/Images/musicsymbol.png"   class="profilelipes" ></button>
+                      <!-- <input type="submit" id="{{i}}" value=""><img src="static/Images/musicsymbol.png"   class="profilelipes" ></img></input> -->
+                    </form>
+                    <script src="https://code.jquery.com/jquery-3.5.1.js"
+                    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+                    crossorigin="anonymous"></script>
+              
+                    <script type="text/javascript">
+                    $(document).on('submit','#{{i}}',function(e)
+                           {
+                    //console.log($("#todo"),val());
+                    e.preventDefault();
+                    var $index = e.target.id;
+                    $.ajax({
+                      type:'POST',
+                      url:'/playsong',
+                      data:{
+                        todo: $index
+                      },
+                      success:function()
+                      {
+                        //alert('saved');
+                      }
+                    })
+                    });
+                  </script>
+
+
+                </div>
+            </div>
+            {% endfor %}
+            {% endfor %}
+
+        </div>
+    </div>
+    <script>
+        
+    </script>
+    <!-- <script>
+        function StartOrStop(audioFile)
+        {
+          var audie = document.getElementById("myAudio");
+          audie.src = audioFile;
+          if(audie.paused==false)
+           {
+              audie.Paused();
+           }
+           else
+           {
+             audie.play();
+           }
+        }
+    </script> -->
+    <script  src="static\JS\vanilla-tilt.js"></script>
+
+</body>
+</html>

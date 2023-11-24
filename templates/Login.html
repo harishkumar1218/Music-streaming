@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            background-image: url("{{ url_for('static', filename='Images/bg5.svg') }}");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logincard{
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 70px;
+            background-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="logincard" data-tilt>
+            <img src="{{url_for('static', filename='Images/loginlogo.png')}}" style="width: 120px;height: 100px;margin-left: 40px;border-radius: 50px;"><br><br><br>
+            <div class="form">
+                <form action="" method="POST">
+                <input type="email" name="email" placeholder="Enter Email" style="padding:10px;border-radius: 150px;background: transparent;"><br><br>
+                <input type="password" name="pass" placeholder="Enter Password" style="padding:10px;border-radius: 150px;background: transparent;"><br><br>
+
+                <input type="submit" class="loginbtn" style="padding:10px;border-radius:50px;font-weight:bold;background-color: #894083;font-size: 20px;margin-left: 60px;color:white;" value="Login">
+                </form>
+                <br>
+                <p>Don't have account? <a href="/SignUp" style="text-decoration: none; color: #894083;"> Create One</a></p><br>
+                <!-- <a href="/test" style="font-weight: bold;padding: 10px;border-radius: 50px;border: 1px solid black;font-size: 20px;color:white;background-color: rgb(137, 64, 131);text-decoration: none;">SignUp</a> -->
+                <p style="color: red">{{msg}}</p>
+            </div>
+        </div>
+    </div>
+    <script src="{{url_for('static', filename='JS/vanilla-tilt.js')}}"></script>
+</body>
+</html>

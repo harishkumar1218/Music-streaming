@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/homestyle.css')}}">
+    <style>
+        .container{
+            background-image: url("{{url_for('static', filename='Images/night2.jpg')}}");
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2  style="position:absolute;left:50px;top: 120px;color:white;">Hello {{name}}, How are you? Isn't the weather so nice?</h2>
+        <h2><a href="/logout" style="position:absolute;right: 50px;top: 50px;
+                text-decoration: none;color:white;
+                font-family: 'Brush Script MT', cursive;transition: 2s;
+                padding: 15px;border: 1px solid white;border-radius: 25px;">LOGOUT</a></h2>
+                
+        <div class="card">
+            <div class="content">
+                <h2 style="padding-left: 70px;">Music</h2><br><br>
+                <p style="font-size: 1.5em;font-family: 'Brush Script MT', cursive;padding-top: 15px;">Enjoy your personal favorite songs with high quality without interption</p><br><br>
+                <a href="/music">Listen</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="content">
+                <h2 style="margin-left: 70px;">Music</h2><br><br>
+                <p style="font-size: 1.5em;font-family: 'Brush Script MT', cursive;padding-top: 15px;">Enjoy your personal favorite songs with high quality without interption</p><br><br>
+                <a href="#">Listen</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="content">
+                <h2 style="padding-left: 70px;">Music</h2><br><br>
+                <p style="font-size: 1.5em;font-family: 'Brush Script MT', cursive;padding-top: 15px;">Enjoy your personal favorite songs with high quality without interption</p><br><br>
+                <a href="#">Listen</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="content">
+                <h2 style="padding-left: 70px;">Music</h2><br><br>
+                <p style="font-size: 1.5em;font-family: 'Brush Script MT', cursive;padding-top: 15px;">Enjoy your personal favorite songs with high quality without interption</p><br><br>
+                <a href="#">Listen</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="content">
+                <h2 style="padding-left: 70px;">Music</h2><br><br>
+                <p style="font-size: 1.5em;font-family: 'Brush Script MT', cursive;padding-top: 15px;">Enjoy your personal favorite songs with high quality without interption</p><br><br>
+                <a href="#">Listen</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
